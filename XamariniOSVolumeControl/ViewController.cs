@@ -1,4 +1,3 @@
-﻿using System;
 using AVFoundation;
 using Foundation;
 using UIKit;
@@ -26,11 +25,16 @@ namespace XamariniOSVolumeControl
 		}
 		partial void BtnPlay_TouchUpInside(UIButton sender)
 		{
+		        // Call here the play music method
 			PlayMusic();
 		}
 		//Play Music
+		/// Play music method will get the song from local path and play using AVAudioPlayer
+
 		public void PlayMusic()
 		{
+			if (!MusicOn) 
+			   return;
 			NSUrl songURL;
 			if (!MusicOn) return;
 			songURL = new NSUrl("Sounds/song.mp3");
@@ -47,7 +51,6 @@ namespace XamariniOSVolumeControl
 		public override void DidReceiveMemoryWarning()
 		{
 			base.DidReceiveMemoryWarning();
-			// Release any cached data, images, etc that aren't in use.
 		}
 	}
 }
