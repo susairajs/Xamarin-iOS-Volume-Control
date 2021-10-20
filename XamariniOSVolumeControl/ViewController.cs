@@ -28,11 +28,11 @@ namespace XamariniOSVolumeControl
 		{
 			PlayMusic();
 		}
+		//Play Music
 		public void PlayMusic()
 		{
 			NSUrl songURL;
 			if (!MusicOn) return;
-
 			songURL = new NSUrl("Sounds/song.mp3");
 			NSError err;
 			player = new AVAudioPlayer(songURL, "mp3", out err);
@@ -41,7 +41,6 @@ namespace XamariniOSVolumeControl
 			{
 				player = null;
 			};
-
 			player.Play();
 		}
 
