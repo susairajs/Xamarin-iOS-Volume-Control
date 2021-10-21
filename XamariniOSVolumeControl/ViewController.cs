@@ -28,12 +28,15 @@ namespace XamariniOSVolumeControl
 		        // Call here the play music method
 			PlayMusic();
 		}
+		//Play Music
 		/// Play music method will get the song from local path and play using AVAudioPlayer
+
 		public void PlayMusic()
 		{
 			if (!MusicOn) 
 			   return;
 			NSUrl songURL;
+			if (!MusicOn) return;
 			songURL = new NSUrl("Sounds/song.mp3");
 			NSError err;
 			player = new AVAudioPlayer(songURL, "mp3", out err);
